@@ -53,6 +53,14 @@ object DayOneMain {
     }
   }
 
+
+  def blackJackCheck(numOne: Int, numTwo: Int): Int = {
+    if (numOne > 21 && numTwo > 21) 0
+    else if (21 - numOne > 21 - numTwo) numTwo
+    else numOne
+  }
+
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
@@ -77,12 +85,14 @@ object DayOneMain {
     outputCharNumTimesInEveryDimension('h', 4)
 
     fizzBuzzCustom("ding", "dong", 100)
+
+
     var countries = java.util.TimeZone.getAvailableIDs()
 
     countries = countries.filter(country => country.contains('/')).map(country => country.substring(country.lastIndexOf("/") + 1))
     countries.foreach(country => println(country))
 
-
+    println(blackJackCheck(20,18))
   }
 }
 
