@@ -60,6 +60,22 @@ object DayOneMain {
     else numOne
   }
 
+  def sumOfThreeNumsUnlessDuplicate(numOne: Int, numTwo: Int, numThree: Int): Int = {
+    var numSet = scala.collection.mutable.Set[Int]()
+    numSet += numOne
+    numSet += numTwo
+    if (numSet.sum == numOne) {
+      if (numThree == numOne) 0
+      else numThree
+    }
+    else if (numOne == numThree) numTwo
+    else if (numTwo == numThree) numOne
+    else {
+      numSet += numThree
+      numSet.sum
+    }
+  }
+
 
   def main(args: Array[String]): Unit = {
     println("Hello World")
@@ -93,6 +109,11 @@ object DayOneMain {
     countries.foreach(country => println(country))
 
     println(blackJackCheck(20,18))
+
+    println(sumOfThreeNumsUnlessDuplicate(10,20,30))
+    println(sumOfThreeNumsUnlessDuplicate(10,10,20))
+    println(sumOfThreeNumsUnlessDuplicate(10,11,10))
+    println(sumOfThreeNumsUnlessDuplicate(10,11,11))
   }
 }
 
