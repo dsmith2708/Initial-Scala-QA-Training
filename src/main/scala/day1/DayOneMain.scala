@@ -77,6 +77,12 @@ object DayOneMain {
     outputCharNumTimesInEveryDimension('h', 4)
 
     fizzBuzzCustom("ding", "dong", 100)
+    var countries = java.util.TimeZone.getAvailableIDs()
+
+    countries = countries.filter(country => country.contains('/')).map(country => country.substring(country.lastIndexOf("/") + 1))
+    countries.foreach(country => println(country))
+
+
   }
 }
 
