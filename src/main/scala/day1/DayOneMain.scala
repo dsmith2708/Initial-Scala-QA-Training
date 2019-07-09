@@ -19,6 +19,11 @@ object DayOneMain {
     resultOfStringSplit
   }
 
+  def concatStringsAndReplaceCharacter(stringOne: String, stringTwo: String,
+                      charToReplace: Char, replacementChar: Char): String = {
+    val result = (stringOne + stringTwo).replace(charToReplace, replacementChar)
+    result
+  }
 
   def main(args: Array[String]): Unit = {
     println("Hello World")
@@ -31,6 +36,8 @@ object DayOneMain {
     outputAnyInput(true)
 
     println(returnNumOfCharsFromStringEnd(5, "123456789"))
+
+    println(concatStringsAndReplaceCharacter("Hello", "World", 'o', 'a'))
   }
 }
 
