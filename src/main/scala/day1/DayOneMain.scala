@@ -10,7 +10,7 @@ object DayOneMain {
     return "Returned String"
   }
 
-  def outputAnyInput(input: Any): Unit = {
+  def outputAnyInputToConsole(input: Any): Unit = {
     println(input)
   }
 
@@ -25,19 +25,26 @@ object DayOneMain {
     result
   }
 
+  def returnSumOfInts(intOne: Int, intTwo: Int): Int = {
+    intOne + intTwo
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
     printInput(returnString())
 
-    outputAnyInput(1.1)
-    outputAnyInput("TestOutput")
-    outputAnyInput(1)
-    outputAnyInput(true)
+    outputAnyInputToConsole(1.1)
+    outputAnyInputToConsole("TestOutput")
+    outputAnyInputToConsole(1)
+    outputAnyInputToConsole(true)
 
     println(returnNumOfCharsFromStringEnd(5, "123456789"))
 
     println(concatStringsAndReplaceCharacter("Hello", "World", 'o', 'a'))
+
+    println(returnSumOfInts(1,2))
+    
   }
 }
 
