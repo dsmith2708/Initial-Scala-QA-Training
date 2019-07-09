@@ -38,6 +38,12 @@ object DayOneMain {
     }
   }
 
+  def outputCharNumTimesInEveryDimension(charToOutput: Char, numToMutiply: Int): Unit = {
+    var stringOutput = ""
+    for(i <- 1 to numToMutiply) stringOutput += charToOutput
+    for(i <- 1 to numToMutiply) println(stringOutput)
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
@@ -58,7 +64,8 @@ object DayOneMain {
     println(returnSumOrMultiplicationOfIntsUnlessZero(5, 0, true))
 
     outputInputSpecifiedTimes("Hello", 3)
-    
+
+    outputCharNumTimesInEveryDimension('h', 4)
   }
 }
 
