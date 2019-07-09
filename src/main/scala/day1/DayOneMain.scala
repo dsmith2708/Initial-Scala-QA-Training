@@ -6,10 +6,14 @@ object DayOneMain {
     println(input)
   }
 
+  def returnString(): String = {
+    return "Returned String"
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
-    printInput(("input to print"))
+    printInput(returnString())
   }
 }
 
