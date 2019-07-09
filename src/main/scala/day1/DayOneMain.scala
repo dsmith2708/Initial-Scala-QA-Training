@@ -32,6 +32,12 @@ object DayOneMain {
     else intOne * intTwo
   }
 
+  def outputInputSpecifiedTimes(stringToOutput: String, numTimes: Int): Unit = {
+    for(i <- 1 to numTimes) {
+      println(stringToOutput)
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
@@ -50,6 +56,8 @@ object DayOneMain {
     println(returnSumOrMultiplicationOfIntsUnlessZero(1,2, false))
     println(returnSumOrMultiplicationOfIntsUnlessZero(0,5, true))
     println(returnSumOrMultiplicationOfIntsUnlessZero(5, 0, true))
+
+    outputInputSpecifiedTimes("Hello", 3)
     
   }
 }
