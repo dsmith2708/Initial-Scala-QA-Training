@@ -44,6 +44,15 @@ object DayOneMain {
     for(i <- 1 to numToMutiply) println(stringOutput)
   }
 
+  def fizzBuzzCustom(fizzEquivalent: String, buzzEquivalent: String, numToTravelTo: Int): Unit = {
+    for(i <- 1 to numToTravelTo) {
+      if(i % 15 == 0)println(s"$fizzEquivalent$buzzEquivalent")
+      else if (i % 3 == 0)println(fizzEquivalent)
+      else if (i % 5 == 0)println(buzzEquivalent)
+      else println(i)
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
 
@@ -66,6 +75,8 @@ object DayOneMain {
     outputInputSpecifiedTimes("Hello", 3)
 
     outputCharNumTimesInEveryDimension('h', 4)
+
+    fizzBuzzCustom("ding", "dong", 100)
   }
 }
 
