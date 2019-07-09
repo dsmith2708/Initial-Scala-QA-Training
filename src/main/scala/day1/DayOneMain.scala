@@ -14,6 +14,11 @@ object DayOneMain {
     println(input)
   }
 
+  def returnNumOfCharsFromStringEnd(numChars: Int, stringToUse: String): String ={
+    val resultOfStringSplit: String = stringToUse.takeRight(numChars)
+    resultOfStringSplit
+  }
+
 
   def main(args: Array[String]): Unit = {
     println("Hello World")
@@ -24,6 +29,8 @@ object DayOneMain {
     outputAnyInput("TestOutput")
     outputAnyInput(1)
     outputAnyInput(true)
+
+    println(returnNumOfCharsFromStringEnd(5, "123456789"))
   }
 }
 
