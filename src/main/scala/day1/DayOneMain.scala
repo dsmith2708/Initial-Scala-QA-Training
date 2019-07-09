@@ -25,8 +25,10 @@ object DayOneMain {
     result
   }
 
-  def returnSumOrMultiplicationOfInts(intOne: Int, intTwo: Int, addOrMultiply: Boolean): Int = {
-    if (addOrMultiply) intOne + intTwo
+  def returnSumOrMultiplicationOfIntsUnlessZero(intOne: Int, intTwo: Int, addOrMultiply: Boolean): Int = {
+    if(intOne == 0) intTwo
+    else if (intTwo == 0) intOne
+    else if (addOrMultiply) intOne + intTwo
     else intOne * intTwo
   }
 
@@ -44,9 +46,10 @@ object DayOneMain {
 
     println(concatStringsAndReplaceCharacter("Hello", "World", 'o', 'a'))
 
-    println(returnSumOrMultiplicationOfInts(1,2, true))
-    println(returnSumOrMultiplicationOfInts(1,2, false))
-
+    println(returnSumOrMultiplicationOfIntsUnlessZero(1,2, true))
+    println(returnSumOrMultiplicationOfIntsUnlessZero(1,2, false))
+    println(returnSumOrMultiplicationOfIntsUnlessZero(0,5, true))
+    println(returnSumOrMultiplicationOfIntsUnlessZero(5, 0, true))
     
   }
 }
