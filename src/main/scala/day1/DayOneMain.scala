@@ -7,7 +7,7 @@ object DayOneMain {
   }
 
   def returnString(): String = {
-    return "Returned String"
+    "Returned String"
   }
 
   def outputAnyInputToConsole(input: Any): Unit = {
@@ -15,14 +15,13 @@ object DayOneMain {
   }
 
   def returnNumOfCharsFromStringEnd(numChars: Int, stringToUse: String): String ={
-    val resultOfStringSplit: String = stringToUse.takeRight(numChars)
-    resultOfStringSplit
+    stringToUse.takeRight(numChars)
   }
 
   def concatStringsAndReplaceCharacter(stringOne: String, stringTwo: String,
                       charToReplace: Char, replacementChar: Char): String = {
-    val result = (stringOne + stringTwo).replace(charToReplace, replacementChar)
-    result
+
+    (stringOne + stringTwo).replace(charToReplace, replacementChar)
   }
 
   def returnSumOrMultiplicationOfIntsUnlessZero(intOne: Int, intTwo: Int, addOrMultiply: Boolean): Int = {
