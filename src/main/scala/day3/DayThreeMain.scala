@@ -53,10 +53,8 @@ object DayThreeMain {
     stringToSort.toList.sorted.mkString("")
   }
 
-
-
   def main(args: Array[String]): Unit = {
     println("day three")
-    hashMapAnagramSolver(List("hsdfdsf", "dfdsf", "fars","long", "song", "sdsa", "garb", "dfgdfgktjtgh", "gods", "raps", "days", "dongs", "hello", "hi"))
+    hashMapAnagramSolver(List("hsdfdsf", "dfdsf", "fars","long", "song", "sdsa", "garb", "dfgdfgktjtgh", "gods", "raps", "days", "dongs", "hello", "hi","jeffsz"))
   }
 }
