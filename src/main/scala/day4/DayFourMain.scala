@@ -14,6 +14,5 @@ object DayFourMain {
       def run() = println("Beep!")
     }
     val f = ex.scheduleAtFixedRate(task, 1, 1, TimeUnit.SECONDS)
-    f.cancel(false)
-  }
+    f.cancel(false)}
 }
