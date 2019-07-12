@@ -37,14 +37,52 @@ object HangmanMain {
     } else false
   }
 
+  def getWordToFind(): String ={
+    var difficultyGotten = false
+    var userInput = " "
+    while(!difficultyGotten){
+      println("Please enter a difficulty level:")
+      println("[E}asy [M]edium [H]ard]")
+      userInput = scala.io.StdIn.readLine()
+      if(userInput.length == 1 && userInput.matches("[EMH]")) {
+        difficultyGotten = true
+      } else println("Error, please enter [E], [M] or [H]")
+    }
+    var lowerLimit = 3
+    var upperLimit = 5
+    userInput match {
+      case "E" => {}
+      case "M" => {
+        lowerLimit = 5
+        upperLimit = 7
+      }
+      case "H" => {
+        lowerLimit = 7
+        upperLimit = 15
+      }
+    }
+    selectWord(lowerLimit, upperLimit)
+  }
+
+  def selectWord(lowerLimit: Int, upperLimit: Int ) : String = {
+    val words = getWordOptions()
+    val randomNumGen = scala.util.Random
+    randomNumGen.setSeed(Calendar.getInstance.get(Calendar.MILLISECOND))
+    var gotWord = false
+    var word = ""
+    while(!gotWord) {
+      word = words.filter(item => !item.contains("\'"))(randomNumGen.nextInt(words.length-1))
+      if(word.length >= lowerLimit && word.length < upperLimit) {
+        gotWord = true
+      }
+    }
+    word
+  }
 
 
   def main(args: Array[String]): Unit = {
     var playerLives = 10
-    val words = getWordOptions()
-    val randomNumGen = scala.util.Random
-    randomNumGen.setSeed(Calendar.getInstance.get(Calendar.MILLISECOND))
-    val selectedWord: String = words(randomNumGen.nextInt(words.length - 1))
+    val selectedWord: String = getWordToFind()
     var solved = false
     val solvedCharIndex: ListBuffer[Int] = ListBuffer()
 
