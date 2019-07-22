@@ -2,12 +2,20 @@ package day3.garageProject
 
 import scala.collection.mutable.ListBuffer
 
-class Garage( var currentVehicles: ListBuffer[Vehicle], var currentEmployees: ListBuffer[Employee], var garageOpen: Boolean) {
-  def addVehicle(vehicleToAdd: Vehicle): Unit = {
-
+class Garage( val currentVehicles: ListBuffer[Vehicle], var currentEmployees: ListBuffer[Employee], var garageOpen: Boolean) {
+  def addVehicle(vehicleToAdd: Vehicle): Boolean = {
+    if(garageOpen) {
+      currentVehicles += vehicleToAdd
+      println(currentVehicles)
+      true
+    } else false
   }
 
   def removeVehicle(vehicleIDToRemove: Int): Unit = {
+
+  }
+
+  def removeVehicleType(vehicleTypeToRemove: String): Unit = {
 
   }
 
@@ -28,7 +36,7 @@ class Garage( var currentVehicles: ListBuffer[Vehicle], var currentEmployees: Li
   }
 
   def openGarage(): Unit = {
-
+    garageOpen = true
   }
 
   def closeGarage(): Unit = {
